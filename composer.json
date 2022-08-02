@@ -6,7 +6,10 @@
         "kint-php/kint-smarty": "^1.0"
     },
     "require" : {
-        "php" : ">=7.3"
+        "php" : ">=7.4",
+        "ext-ldap": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"    
     },
     "scripts": {
         "install-tools":"phive install --copy --trust-gpg-keys 4AA394086372C20A,2420BAE0A3BE25C6,6DA3ACC4991FFAE5,E82B2FB314E9906E  phing phpunit phpdocumentor php-cs-fixer",
