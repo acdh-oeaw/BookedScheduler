@@ -20,4 +20,4 @@ fi
 
 # Start Apache
 echo "Start Apache!"
-exec heroku-php-apache2 Web
+exec heroku-php-apache2 /app/Web
