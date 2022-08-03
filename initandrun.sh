@@ -6,8 +6,6 @@ export PATH="/app/.heroku/php/bin:${PATH}"
 # Add custom commands
 cd /app
 rm -f config/config.php
-rm -f plugins/Authentication/Ldap/Ldap.config.php 
-cp -r plugins/Authentication/Ldap/Ldap.config.dist.php plugins/Authentication/Ldap/Ldap.config.php
 if [ "$LB_ENV" = "production" ]; then cp config/config.dist.php config/config.php; fi; \
 if [ "$LB_ENV" = "dev" ]; then cp config/config.devel.php config/config.php; fi; \
 echo '$conf["settings"]["database"]["user"] = ' "'$DB_USER';" >>config/config.php; \
