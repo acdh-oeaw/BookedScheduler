@@ -23,7 +23,6 @@ echo '$conf["settings"]["admin.email.name"] = ' "'$ADMIN_EMAIL_NAME';" >>config/
 echo '$conf["settings"]["app.title"] = ' "'$APP_TITLE';" >>config/config.php; \
 echo '$conf["settings"]["default.timezone"] = ' "'$DEF_TZ';" >>config/config.php; \
 echo '$conf["settings"]["allow.self.registration"] = ' "'$ALLOW_SELF_REGISTRATION';" >>config/config.php; \
-echo '$conf["settings"]["plugins"]["Authentication"] =  ' "'$AUTH';" >>config/config.php; \
 echo '$conf["settings"]["phpmailer"]["smtp.host"] = ' "'$SMTP_HOST';" >>config/config.php; 
 
 # Start Apache
