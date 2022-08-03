@@ -12,6 +12,7 @@ This is a community effort to keep the OpenSource [GPLv3](./LICENSE.md) BookedSc
 
 [Full install instructions](./doc/INSTALLATION.md)
 
+
 ## Developer Documentation
 
 [developer documentation](./doc/README.md)
