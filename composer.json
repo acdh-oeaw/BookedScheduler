@@ -10,6 +10,7 @@
         "ext-gd": "*",
         "ext-ldap": "*",
         "ext-pdo": "*",
+        "ext-openssl": "*",
         "ext-pdo_mysql": "*"    
     },
     "scripts": {
