@@ -437,6 +437,9 @@ class Net_LDAP2 extends PEAR
                 $this->_down_host_list[] = $host;
                 continue;
             }
+ldap_set_option($this->_link, LDAP_OPT_X_TLS_REQUIRE_CERT, LDAP_OPT_X_TLS_NEVER);
+//ldap_set_option($this->_link, LDAP_OPT_REFERRALS LDAP, 0);
+ldap_set_option($this->_link, LDAP_OPT_REFERRALS, 0);
 
             // If we're supposed to use TLS, do so before we try to bind,
             // as some strict servers only allow binding via secure connections
@@ -824,7 +827,7 @@ class Net_LDAP2 extends PEAR
                 if ((Net_LDAP2::errorMessage($error_code) === 'LDAP_OPERATIONS_ERROR') &&
                     ($this->_config['auto_reconnect'])) {
                     // The server has become disconnected before trying the
-                    // operation.  We should try again, possibly with a
+                    // operation.  We should try again, possibly with a 
                     // different server.
                     $this->_link = false;
                     $this->performReconnect();
@@ -1798,3 +1801,5 @@ class Net_LDAP2_Error extends PEAR_Error
         }
     }
 }
+
+?>
