@@ -14,7 +14,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Pack Build
-        uses: dfreilich/pack-action@v2.0.0
+        uses: dfreilich/pack-action@v2
         with:
           args: 'build tmp-cnb-image --builder heroku/buildpacks:20'
       - name: Set default port 5000 within image
@@ -47,7 +47,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value={{sha}}
       - name: Build and push
-        uses: docker/build-push-action@v3.1.0
+        uses: docker/build-push-action@v3
         with:
           context: .
           platforms: linux/amd64
