@@ -14,7 +14,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Pack Build
-        uses: dfreilich/pack-action@v2.0.0
+        uses: dfreilich/pack-action@v2.1.1
         with:
           args: 'build tmp-cnb-image --builder heroku/buildpacks:18'
       - name: Set default port 5000 within image
@@ -47,7 +47,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value={{sha}}
       - name: Build and push
-        uses: docker/build-push-action@v3.1.0
+        uses: docker/build-push-action@v3
         with:
           context: .
           platforms: linux/amd64
@@ -69,7 +69,7 @@ jobs:
       - name: Kubernetes credentials
         run: |
           mkdir ${HOME}/.kube
-          echo ${{ secrets.ACDH_KUBE_CONFIG }} | base64 --decode > ${HOME}/.kube/config
+          echo ${{ secrets.C2_KUBE_CONFIG }} | base64 --decode > ${HOME}/.kube/config
           chmod 0600 ${HOME}/.kube/config
           KUBE_NAMESPACE="${{ secrets.KUBE_NAMESPACE }}"
           if [ "$KUBE_NAMESPACE"x == 'x' ]
